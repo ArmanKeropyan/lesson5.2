@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap');
+
+
+body { 
+    margin: 0;
+    padding: 0;
+    font-family: "Raleway", sans-serif;
+}
+
+.name {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+h1 {
+    font-weight: 300;
+    font-size: 50px;
+}
+
+.main {
+    width: 100%;
+    display: flex;
+
+}
+
+.gallery {
+    max-width: 1170px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    
+}
+
+.image {
+    height: 250px;
+    flex: 1 1 auto;
+    overflow: hidden;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    vertical-align: center;
+    object-fit: cover;
+}
+
+.image img:hover {
+    cursor: pointer;
+    transform: scale(1.4) rotate(7deg);
+    transition: all 0.5s ;
+}
+
+.overlay {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.modal {
+    height: 80vh;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    background-color: white;
+    z-index: 1;
+    transform: translateX(-50%) translateY(-50%);
+    display: none;
+}
+
+#active-image {
+    height: 100%;
+    border: 5px solid white;
+}
+
+#close {
+    position: absolute;
+    width: 30px;
+    top: -50px;
+    right: -50px;
+    cursor: pointer;
+    height: 30px;
+    background: url('../img/close.png') no-repeat 50%;
+    background-size: 100%;
+
+}
+
+#close:hover {
+    animation-name: round;
+    animation-duration: 1.5s;
+}
+
+@keyframes round {
+    from{
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#right, #left {
+    position: absolute;
+    width: 30px;
+    bottom: 0;
+    cursor: pointer;
+    height: 80%;
+    transition: all 0.3s;
+}
+
+#right {
+    right: -50px;
+    background: url('../img/right.png') no-repeat 50% 40%;
+    background-size: 100%;
+}
+
+#left {
+    left: -50px;
+    background: url('../img/left.png') no-repeat 50% 40%;
+    background-size: 100%;
+}
+
+#right:hover, #left:hover {
+    transform: scale(1.2);
+
+}
+
